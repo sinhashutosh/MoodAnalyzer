@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class TestCases {
 
     @Test
-    public void methodShouldReturnHappyWhenNullPointerEncounter() {
+    public void methodShouldReturnHappyWhenNullPointerEncounter() throws MoodAnalysisException {
         MoodAnalyzer mood = new MoodAnalyzer();
         String actual = mood.moodAnalyse();
         String expected = "HAPPY";

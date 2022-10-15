@@ -1,6 +1,6 @@
 package Day21;
 
-public class MoodAnalyzer {
+public class MoodAnalyzer extends Exception {
     String message;
 
     public MoodAnalyzer(String message) {
@@ -12,19 +12,24 @@ public class MoodAnalyzer {
     }
 
 
-    public String moodAnalyse() throws NullPointerException {
+    public String moodAnalyse() throws MoodAnalysisException {
         try {
+            if (message == null) {
+                throw new MoodAnalysisException();
+            }
             if (message.contains("sad")) {
                 return "SAD";
             } else {
                 return "HAPPY";
             }
-        } catch (Exception e) {
+
+        } catch (MoodAnalysisException e) {
+            System.out.println("You Entered Wrong Input \n Please Enter valid Mood");
             return "HAPPY";
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MoodAnalysisException {
         MoodAnalyzer mood = new MoodAnalyzer();
         MoodAnalyzer mood1 = new MoodAnalyzer("I am in sad mood");
         MoodAnalyzer mood2 = new MoodAnalyzer("I am in Any mood");
