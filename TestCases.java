@@ -3,18 +3,14 @@ package Day21;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class testCases {
-    MoodAnalyzer mood = new MoodAnalyzer();
+public class TestCases {
+
     @Test
     public void methodShouldReturnTrueWhenMoodSad() {
-        String actual = mood.moodAnalyse("I am in sad mood");
+        MoodAnalyzer mood = new MoodAnalyzer("I am in sad Mood");
+        String actual = mood.moodAnalyse();
         String expected = "SAD";
         Assertions.assertEquals(expected, actual);
     }
-    @Test
-    public void methodShouldReturnHappyWhenMoodAny(){
-        String actual = mood.moodAnalyse("I am in Any Mood");
-        String expected = "HAPPY";
-        Assertions.assertEquals(expected,actual);
-    }
+
 }
