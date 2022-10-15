@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 public class TestCases {
 
     @Test
-    public void methodShouldReturnTrueWhenMoodSad() {
-        MoodAnalyzer mood = new MoodAnalyzer("I am in sad Mood");
+    public void methodShouldReturnTrueWhenAnyMood() {
+        MoodAnalyzer mood = new MoodAnalyzer("I am in Any Mood");
         String actual = mood.moodAnalyse();
-        String expected = "SAD";
+        String expected = "HAPPY";
         Assertions.assertEquals(expected, actual);
     }
 
